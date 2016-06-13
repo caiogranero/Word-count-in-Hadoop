@@ -184,3 +184,7 @@ sudo apt-get install default-jdk
 9. Finish Hadoop
     
     * Finish all daemons: ``` stop-dfs.sh && stop-yarn.sh ```
+    
+10. References
+
+    The following tutorial were based on the (Apache Word Count tutorial)[https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html]
