@@ -145,9 +145,9 @@ sudo apt-get install default-jdk
 
     Now, all the dependencies error were fixed
 
-5. Creating the jar file
+5. Preparing to create the jar file
 
-    Now, we need to create the jar file from this project. This jar will be necessary to execute in hadoop.
+    Now, we need to prepare the project to create the jar file. This jar will be necessary to execute in hadoop.
 
     Click on Run Tab -> Run-configurations -> New Configuration -> Apply
 
@@ -155,4 +155,23 @@ sudo apt-get install default-jdk
     * Project – Browse and select your project
     * Main Class – Select WordCount.java
 
-6.
+6. Creating the jar file
+
+    Now, we go to File tab -> Export -> Runnable Jar.
+        
+    * Launch Configuration - Select the configuration above
+    * Export destination - Set a destination
+    * Library handing - Extract required libraries into generated JAR
+        
+    Now we have the jar file. 
+    Right-click the jar file -> Properties -> Permision -> Check allow executing file as program.
+    
+7. Execute on Hadoop
+
+    Go to hduser:
+    ```
+    sudo su hduser
+    ```
+    
+    Go to hadoop config folder: ``` cd /usr/local/hadoop/etc/hadoop ```
+
