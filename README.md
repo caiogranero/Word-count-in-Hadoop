@@ -187,4 +187,4 @@ sudo apt-get install default-jdk
     
 ## References
 
-The following tutorial were based on the (Apache Word Count tutorial)[https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html]
+The following tutorial were based on the [Apache Word Count tutorial](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
