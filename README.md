@@ -166,15 +166,21 @@ sudo apt-get install default-jdk
     Now we have the jar file. 
     Right-click the jar file -> Properties -> Permision -> Check allow executing file as program.
     
-7. Execute on Hadoop
+7. Run Hadoop
 
     * Go to hduser: ``` sudo su hduser ```
     * Go to hadoop config folder: ``` cd /usr/local/hadoop/etc/hadoop ```
     * Delete temp folders: ``` sudo rm -R /app/* ``` and ``` sudo rm -R /tmp/* ```
     * Format the namenode: ``` hadoop namenode -format ```
     * Start all daemons: ``` start-dfs.sh && start-yarn.sh ```
+    
+8. Execute the wordcount.jar
+
     * Make a hdfs directory (You will can not see this folder in terminal ls): ``` hadoop dfs -mkdir -p /usr/local/hadoop/input ```
     * Copy the input file txt to the hdfs directory: ```  hadoop dfs -copyFromLocal /home/caiogranero/word-count-in-hadoop: sample.txt /usr/local/hadoop/input ```
     * Execute the program: ``` hadoop jar wordcount.jar /usr/local/hadoop/input /usr/local/hadoop/output ```
     * See the result: ``` hdfs dfs -cat /usr/local/hadoop/output/part-00000 ```
-
+    
+9. Finish Hadoop
+    
+    * Finish all daemons: ``` stop-dfs.sh && stop-yarn.sh ```
