@@ -26,7 +26,7 @@ sudo apt-get install default-jdk
 
 ## The Word Count
 
-1. WordCount.java
+1. Creating WordCount.java
 
 ```
 import org.apache.hadoop.fs.Path;
@@ -70,7 +70,7 @@ public class WordCount extends Configured implements Tool{
 }
 ```
 
-2. WordCountMapper.java
+2. Creating WordCountMapper.java
 
 ```
 import java.io.IOException;
@@ -104,7 +104,8 @@ public class WordCountMapper extends MapReduceBase implements Mapper<LongWritabl
 }
 ```
 
-3. WordCountReducer.java
+3. Creating WordCountReducer.java
+
 ```
 import java.io.IOException;
 import java.util.Iterator;
@@ -129,3 +130,29 @@ public class WordCountReducer extends MapReduceBase implements Reducer<Text, Int
 }
 ```
 
+4. Fix dependencies errors
+
+To fix all the dependencies error, we will need to add external .jar. Those files are in the hadoop source folder.
+Click on Project -> Properties -> Librarys -> Add External JARs and select all jars in the following folder:
+
+```
+/usr/local/hadoop/share/hadoop/common
+```
+and
+```
+/usr/local/hadoop/share/hadoop/mapreduce
+```
+
+Now, all the dependencies error were fixed
+
+5. Creating the jar file
+
+Now, we need to create the jar file from this project. This jar will be necessary to execute in hadoop.
+
+Click on Run Tab -> Run-configurations -> New Configuration -> Apply
+
+* Name – WordCountConfig
+* Project – Browse and select your project
+* Main Class – Select WordCount.java
+
+6.
